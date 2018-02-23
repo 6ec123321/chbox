@@ -29,6 +29,7 @@ class chbox extends rcube_plugin {
     $rcmail->output->add_label('chbox.chbox');
     $rcmail->output->set_env('chboxicon', $chboxicon);
     $this->include_stylesheet($this->local_skin_path(). '/chbox.css');
+    $this->include_script($this->local_skin_path(). '/chbox.js');
 
     return $args;
   }
