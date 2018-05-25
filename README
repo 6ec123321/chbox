@@ -7,7 +7,7 @@ This is plugin for roundcube
 Install
 ----------------------------------------
 
-Open config/main.inc.php or config/config.inc.php
+Edit config/config.inc.php
 
 1- Add the plugin to roundcube $config['plugins'] array like:
 
