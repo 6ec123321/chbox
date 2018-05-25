@@ -7,5 +7,5 @@ function chbox_menu(){
 $(document).ready(function(){
   chbox_menu();
     var li = '<label class="disabled"><input type="checkbox" name="list_col[]" value="chbox" name="cols_chbox" checked="checked" disabled="disabled" type="checkbox"/><span>'+rcmail.get_label('chbox.chbox')+'</span></label>';
-  $("#listoptions fieldset#listoptions-columns ul.proplist:first li:first-child").after('<li>'+li+'</li>');
+  $("#listoptions fieldset ul.proplist:first li:first()").after('<li>'+li+'</li>');
 });
