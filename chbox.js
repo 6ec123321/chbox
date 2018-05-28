@@ -45,28 +45,18 @@ if (window.rcmail) {
     rcmail.register_command('plugin.chbox.selectmenu', rcmail_selectmenu, true);
     // add event-listener to message list
     if (rcmail.message_list) {
-      rcmail.message_list.addEventListener('select', function(list){
-        $('#messagelist input:checked').removeAttr('checked');
+      rcmail.message_list.addEventListener('select', function(list) {
+        $('#messagelist input').filter(':checkbox').prop('checked',false);
         var selection = rcmail.message_list ? $.merge([], rcmail.message_list.get_selection()) : [];
         // exit if no mailbox specified or if selection is empty
         if (!rcmail.env.uid && !selection.length)
           return;
-        // also select childs of collapsed rows
-        /*
-        for (var uid, i=0, len=selection.length; i<len; i++) {
-          uid = selection[i];
-          if (rcmail.message_list.rows[uid].has_children && !rcmail.message_list.rows[uid].expanded)
-            rcmail.message_list.select_childs(uid);
-        }
-        var selection = rcmail.message_list ? $.merge([], rcmail.message_list.get_selection()) : [];
-        */
         for (var uid, i=0, len=selection.length; i<len; i++) {
             uid = selection[i];
             var select = document.getElementById('rcmselect'+uid);
             if (select) {
-				select.checked = true;
-				//rcmail.message_list.select_childs(uid);
-			}
+              select.checked = true;
+      	    }
         }
       });
     }
