@@ -6,6 +6,11 @@ function chbox_menu(){
 
 $(document).ready(function(){
   chbox_menu();
-    var li = '<label><input type="checkbox" name="list_col[]" value="chbox" name="cols_chbox" checked="checked" type="checkbox"/><span>'+rcmail.get_label('chbox.chbox')+'</span></label>';
-  $("#listoptions fieldset ul.proplist:first li:first()").after('<li>'+li+'</li>');
+  var li = '<label><input type="checkbox" name="list_col[]" value="chbox" name="cols_chbox" checked="checked" type="checkbox"/><span>'+rcmail.get_label('chbox.chbox')+'</span></label>';
+  if ( $("#listoptions #listoptions-columns").length ) {
+    $("#listoptions #listoptions-columns ul.proplist:first li:first()").after('<li>'+li+'</li>');
+  }
+  else {
+    $("#listoptions fieldset ul.proplist:first li:first()").after('<li>'+li+'</li>');
+  }
 });
