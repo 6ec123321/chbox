@@ -55,3 +55,5 @@ $config['htmleditor'] = 0;
 $config['smtp_user'] = '%u';
 $config['smtp_pass'] = '%p';
 $config['list_cols'] = array('chbox','subject','status', 'from', 'date', 'size', 'flag', 'attachment','list_cols');
+----------------------------------------
+If you want the plugin to work in other skins, please send skin sources
