@@ -35,7 +35,11 @@ class chbox extends rcube_plugin {
   }
 
   function message_list($args){
-    $count = count($args['messages']);
+    if (is_array($args['messages'])) {
+      $count = count($args['messages']);
+    } else {
+      $count = 0;
+    }
 
     for ($i=0;$i<$count;$i++) {
       $uid = $args['messages'][$i]->uid;
